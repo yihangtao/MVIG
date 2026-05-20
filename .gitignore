@@ -151,7 +151,3 @@ scripts/plots/*
 figs/*
 
 models/*
-
-# Optional visualization code and generated visualization assets
-mvp/visualize/
-visualization/
