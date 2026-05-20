@@ -2,7 +2,7 @@
 
 ## Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception
 
-[![Paper](https://img.shields.io/badge/Paper-CVPR%202026-blue.svg)](https://arxiv.org/abs/2602.19596)
+[![Paper](https://img.shields.io/badge/Paper-CVPR%202026-blue.svg)](https://cvpr.thecvf.com/virtual/2026/poster/37883)
 [![arXiv](https://img.shields.io/badge/arXiv-2602.19596-b31b1b.svg)](https://arxiv.org/abs/2602.19596)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 
@@ -116,6 +116,38 @@ Output files:
 - `result/evaluate.log`
 - `result/evaluation_results.pkl`
 - per-case results under `result/attack/` and `result/defense/`
+
+## Key Files
+
+```text
+MVIG/
+|-- scripts/
+|   |-- train_mvig.sh                  # Shell entry for MVIG training
+|   |-- train_ta_mvig_attack.py        # Main MVIG training script; contains MVIGNet and training loop
+|   |-- evaluation.sh                  # Shell entry for attack/defense evaluation
+|   |-- evaluate.py                    # Main evaluation script for MVIG-guided attacks and defender benchmarking
+|   `-- prepare_mvig_dataset.py        # Utility script for MVIG-related dataset metadata and cached attack information
+`-- mvp/
+    |-- perception/
+    |   `-- opencood_perception.py     # Main implementation of RC/BASIC/BAC/RC+ and PGD-style optimization
+    |-- attack/
+    |   |-- lidar_spoof_intermediate_attacker.py   # Connects MVIG-predicted boxes to spoof attack execution
+    |   `-- lidar_remove_intermediate_attacker.py  # Downstream attacker for MVIG-guided remove attacks
+    `-- defense/
+        `-- perception_defender.py     # Defense implementations: CAD, ROBOSAC, CPGuard, and GCP
+```
+
+## Checkpoints And Outputs
+
+```text
+MVIG/
+|-- checkpoints/                       # Best trained MVIG checkpoints, e.g. best_mvig_model_spoof_20.pth
+`-- result/
+    |-- log/                           # Training and evaluation logs
+    |-- attack/                        # Per-case attack outputs generated during evaluation
+    |-- defense/                       # Per-case defense outputs and related metrics
+    `-- evaluation_results.pkl         # Pickled evaluation summary
+```
 
 ## MVIG Position To RC+ Mask
 
