@@ -176,7 +176,16 @@ If you find this work useful, please cite:
   url={https://arxiv.org/abs/2602.19596}
 }
 ```
-
+```bibtex
+@InProceedings{Tao_2026_CVPR,
+    author    = {Tao, Yihang and Hu, Senkang and An, Haonan and Fang, Zhengru and Cao, Hangcheng and Fang, Yuguang},
+    title     = {Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2026},
+    pages     = {42321-42330}
+}
+```
 ## Acknowledgment
 
 This repository is based on [AdvCollaborativePerception](https://github.com/zqzqz/AdvCollaborativePerception). Thanks to the original authors for open-sourcing the framework and resources.
