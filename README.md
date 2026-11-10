@@ -139,6 +139,12 @@ MVIG/
 
 ## Checkpoints And Outputs
 
+We provide a reference MVIGNet checkpoint for the **MVIG spoof attack**:
+
+- `best_mvig_model_spoof_20.pth` — [Google Drive](https://drive.google.com/file/d/1md2vJ5KQNZflQdIUqytP33N2WQ8spTrc/view?usp=drive_link)
+
+Download it and place it under `checkpoints/`, then pass it to `scripts/evaluation.sh` through `model_path`. For other attack types or parameter settings, train MVIGNet with `scripts/train_mvig.sh`.
+
 ```text
 MVIG/
 |-- checkpoints/                       # Best trained MVIG checkpoints, e.g. best_mvig_model_spoof_20.pth
